@@ -1,6 +1,8 @@
-<?php // first-friday.php v0.1.3 by, Chris Kankiewicz <http://www.web-geek.net>
+<?php 
 
-  // Calculate next Friday 
+  // first-friday.php v0.1.3 by, Chris Kankiewicz (http://www.web-geek.net)
+
+  // Calculate next Friday timestamp
   for ($x = date('d'); $x <= (date('d') + 6); $x++) {
     $timeStamp = mktime(0,0,0,date('m'),$x,date('Y'));
     if (date('w',$timeStamp) == 5) {
