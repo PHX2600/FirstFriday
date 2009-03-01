@@ -1,6 +1,4 @@
-<?php 
-
-  // first-friday.php v0.1.3 by, Chris Kankiewicz (http://www.web-geek.net)
+<?php // first-friday.php v0.1.3 by, Chris Kankiewicz (http://www.web-geek.net)
 
   // Calculate next Friday timestamp
   for ($x = date('d'); $x <= (date('d') + 6); $x++) {
