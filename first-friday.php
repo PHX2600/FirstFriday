@@ -1,5 +1,5 @@
 <?php
-	echo(firstFriday(true));
+	echo(firstFriday(true));  // true = Return date as "Month Day, Year" format; false = Return next first Friday timestamp
 
 	function firstFriday($formatted = false) {
 		// firstFriday v0.2 by, Chris Kankiewicz (http://www.ChrisKankiewicz.com)
