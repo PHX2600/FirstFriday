@@ -21,9 +21,9 @@
          * @param boolean $formatted True = returns a formatted string. False = unix time stamp
          * @param string $format PHP date format string
          */
-        public function firstFriday($formatted = true, $format) {
+        public function firstFriday($formatted = true, $format = "F j, Y") {
             if ($formatted == true) {
-                return $this->_firstFridayFormatted();
+                return $this->_firstFridayFormatted($format);
             } else {
                 return $this->_firstFridayStamp();
             }
@@ -67,7 +67,7 @@
          * @param $format PHP date format string
          * @access private
          */
-        private function _firstFridayFormatted($format = "F j, Y") {
+        private function _firstFridayFormatted($format) {
             
             // Return formatted date
             return date($format, $this->_firstFridayStamp());
