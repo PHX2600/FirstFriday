@@ -3,8 +3,8 @@
      * Calculates and echos the next, first Friday of the month.
      *
      * This software is dual liscensed under the following licenses:
-     *     MIT License https://github.com/PHX2600/first-friday/raw/COPYING-MIT.txt
-     *     GPL Version 3 https://github.com/PHX2600/first-friday/raw/COPYING-GPL.txt
+     *     MIT License https://github.com/PHX2600/first-friday/raw/COPYING-MIT
+     *     GPL Version 3 https://github.com/PHX2600/first-friday/raw/COPYING-GPL
      *
      * More info available at https://github.com/PHX2600/first-friday
      *
