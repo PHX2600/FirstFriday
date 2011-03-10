@@ -1,6 +1,7 @@
 <?php
     /**
-     * Calculates and echos the next, first Friday of the month.
+     * Calculates and returns a timestamp or formatted text for the next,
+     * first Friday of the month.
      *
      * This software is dual liscensed under the following licenses:
      *     MIT License https://github.com/PHX2600/first-friday/raw/COPYING-MIT
@@ -14,7 +15,7 @@
     class FirstFriday {
         
         // Define application version
-        const VERSION = '1.0.0-dev';
+        const VERSION = '1.0.0';
         
         /**
          * FirstFriday construct function. Runs on object creation.
