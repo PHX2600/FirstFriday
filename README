@@ -1,6 +1,7 @@
-First Friday
+FirstFriday.php
 ------------------------------------------------------------------
-PHP script that calculates and echos the next, first Friday of the month.
+Calculates and returns a timestamp or formatted text for the next,
+first Friday of the month.
 
 
 Copyright (C) 2009 Chris Kankiewicz <Chris@ChrisKankiewicz.com>
