@@ -3,11 +3,8 @@
      * Calculates and returns a timestamp or formatted text for the next,
      * first Friday of the month.
      *
-     * This software is dual liscensed under the following licenses:
-     *     MIT License https://github.com/PHX2600/first-friday/raw/COPYING-MIT
-     *     GPL Version 3 https://github.com/PHX2600/first-friday/raw/COPYING-GPL
-     *
-     * More info available at https://github.com/PHX2600/first-friday
+     * This software is liscensed under the MIT License. 
+     * More info available at https://github.com/PHX2600/FirstFriday
      *
      * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
      * @copyright 2011 Chris Kankiewicz
@@ -21,6 +18,8 @@
          * FirstFriday construct function. Runs on object creation.
          * @param boolean $formatted True = returns a formatted string. False = unix time stamp
          * @param string $format PHP date format string
+         * @return string Formatted string of the next first Friday
+         * @access public
          */
         public function firstFriday($formatted = true, $format = "F j, Y") {
             if ($formatted == true) {
@@ -66,6 +65,7 @@
         /**
          * Returns formatted string of the next first Friday
          * @param $format PHP date format string
+         * @return string Formatted string of the next first Friday
          * @access private
          */
         private function _firstFridayFormatted($format) {
