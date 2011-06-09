@@ -12,49 +12,45 @@
     class FirstFriday {
         
         // Define application version
-        const VERSION = '1.0.0';
+        const VERSION = '1.1.0';
         
         /**
-         * FirstFriday construct function. Runs on object creation.
+         * Main first Friday function. Calculates and returns a timestamp or 
+         * formatted text for the next, first Friday of the month.
+         * 
          * @param boolean $formatted True = returns a formatted string. False = unix time stamp
-         * @param string $format PHP date format string
+         * @param string $format PHP date format string. Default value = "F j, Y"
          * @return string Formatted string of the next first Friday
          * @access public
          */
         public function firstFriday($formatted = true, $format = "F j, Y") {
+            
             if ($formatted == true) {
                 return $this->_firstFridayFormatted($format);
             } else {
                 return $this->_firstFridayStamp();
             }
+            
         }
         
         /**
          * Returns timestamp of the next first Friday
-         * @return string Timestamp
+         * 
+         * @return string Unix timestamp of the next first Friday
          * @access private
          */
         private function _firstFridayStamp() {
             
-            // Calculate next Friday timestamp
-            for ($x = date('d'); $x <= (date('d') + 6); $x++) {
-                $timeStamp = mktime(0,0,0,date('m'),$x,date('Y'));
-                if (date('w',$timeStamp) == 5) {
-                    $nextFriday = mktime(0,0,0,date('m'),$x,date('Y'));
-                }
-            }
+            // Calculate first Friday of this month
+            $thisFirstFriday = strtotime('first friday of this month');
             
-            // Check if next Friday is the first friday of the month.
-            if (date('d', $nextFriday) <= 7) {
-                $firstFriday = $nextFriday;
-            } else {
+            if (date('d') > date('d', $thisFirstFriday)) {
                 // Calculate first Friday of next month
-                for ($x = 1; $x <= 7; $x++) {
-                    $timeStamp = mktime(0,0,0,date('m')+1,$x,date('Y'));
-                    if (date('w',$timeStamp) == 5) {
-                        $firstFriday = mktime(0,0,0,date('m')+1,$x,date('Y'));
-                    }
-                }
+                $nextFirstFriday = strtotime('first friday of next month');
+                $firstFriday = $nextFirstFriday;
+            } else {
+                // Set the next first Friday
+                $firstFriday = $thisFirstFriday;
             }
             
             // Return next first Friday timestamp
@@ -64,6 +60,7 @@
         
         /**
          * Returns formatted string of the next first Friday
+         * 
          * @param $format PHP date format string
          * @return string Formatted string of the next first Friday
          * @access private
