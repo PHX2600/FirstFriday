@@ -12,7 +12,7 @@
     class FirstFriday {
         
         // Define application version
-        const VERSION = '1.2.0-dev';
+        const VERSION = '1.2.0';
         
         /**
          * Main first Friday function. Calculates and returns a timestamp or 

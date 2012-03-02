@@ -1,12 +1,8 @@
-<?php
-    // Instantiate the FirstFriday object
-    include('./FirstFriday.php'); $ff = new FirstFriday();
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<?php include('FirstFriday.php'); $ff = new FirstFriday(); ?>
+
 <head>
     <title>FirstFriday Example Page</title>
     <style type="text/css">
@@ -20,13 +16,13 @@
 <body>
     
     <h3>Default Format</h3>
-    <p><?php echo($ff->firstFriday()); ?></p>
+    <p><?php echo $ff->firstFriday(); ?></p>
     
     <h3>Custom Format</h3>
-    <p><?php echo($ff->firstFriday(true, "Y-m-d")); ?></p>
+    <p><?php echo $ff->firstFriday('Y-m-d'); ?></p>
     
     <h3>Timestamp</h3>
-    <p><?php echo($ff->firstFriday(false)); ?></p>
+    <p><?php echo $ff->firstFriday(false); ?></p>
 
 </body>
 
