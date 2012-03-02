@@ -7,7 +7,7 @@
      * More info available at https://github.com/PHX2600/FirstFriday
      *
      * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
-     * @copyright 2011 Chris Kankiewicz
+     * @copyright 2012 Chris Kankiewicz
      */
     class FirstFriday {
         
