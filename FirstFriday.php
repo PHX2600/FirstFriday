@@ -15,11 +15,9 @@
         const VERSION = '1.2.0';
         
         /**
-         * Main first Friday function. Calculates and returns a timestamp or 
-         * formatted text for the next, first Friday of the month.
+         * Main first Friday function. 
          * 
-         * @param boolean $formatted True = returns a formatted string. False = unix time stamp
-         * @param string $format PHP date format string. Default value = "F j, Y"
+         * @param string|boolean $format PHP date format string or boolean FALSE for unix time stamp. Default value = "F j, Y"
          * @return string Formatted string of the next first Friday
          * @access public
          */
@@ -34,7 +32,8 @@
         }
         
         /**
-         * Returns timestamp of the next first Friday
+         * Calculates and returns a timestamp or for the next,
+         * first Friday of the month.
          * 
          * @return string Unix timestamp of the next first Friday
          * @access private
