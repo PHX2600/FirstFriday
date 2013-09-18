@@ -14,7 +14,7 @@
     class FirstFriday {
 
         // Define application version
-        const VERSION = '1.3.0-dev';
+        const VERSION = '1.3.0';
 
         /**
          * Calculate timestamp or for the next, first Friday ofthe month
