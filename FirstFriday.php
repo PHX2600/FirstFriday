@@ -1,6 +1,6 @@
 <?php
 
-    namespace PHX2600\FirstFriday;
+    namespace FirstFriday;
 
     /**
      * Calculate the next, first Friday of the month.
