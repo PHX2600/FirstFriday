@@ -1,10 +1,9 @@
 FirstFriday.php
 ===============
 
-Calculates and returns a timestamp or formatted text for the next,
-first Friday of the month.
+Calculates the next, first Friday of the month.
 
-**Copyright (c) 2012 Chris Kankewicz <Chris@ChrisKankiewicz.com>**
+**Copyright (c) 2013 Chris Kankewicz <Chris@ChrisKankiewicz.com>**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
