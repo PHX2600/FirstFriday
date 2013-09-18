@@ -1,5 +1,5 @@
 {
-    "name": "phx2600/firstfriday",
+    "name": "phx2600/first-friday",
     "description": "Calculates the next, first Friday of the month.",
     "keywords": ["first friday", "friday", "date"],
     "license": "MIT",
