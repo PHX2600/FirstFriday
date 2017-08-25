@@ -7,7 +7,7 @@ class FirstFridayTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->firstFriday = $firstFriday = new FirstFriday('America/Phoenix');
+        $this->firstFriday = new FirstFriday('America/Phoenix');
     }
 
     public function test_it_returns_an_instance_of_carbon()
