@@ -9,21 +9,24 @@ class FirstFriday
     /** @var string Timezone for date calculations */
     protected $timezone;
 
-    /** @var Carbon instance to be used for "today" in date calculations */
-    protected $today;
+    /** @var Carbon instance to be used for "now" in date calculations */
+    protected $now;
 
     /**
      * FirstFriday constructor method; runs on object creation.
      *
      * @param string $timezone String representation of a timezone to be used
      *                         for date calculations. See: http://bit.ly/php-tzs
-     * @param Carbon $today Carbon instance representing the value to be used
-     *                      for "today" in date calculations
+     * @param Carbon $now      Carbon instance representing the value to be used
+     *                         for "now" in date calculations
      */
-    public function __construct($timezone, Carbon $today = null)
+    public function __construct($timezone, Carbon $now = null)
     {
         $this->timezone = $timezone;
-        $this->today = isset($today) ? $today : Carbon::today($this->timezone);
+
+        if (isset($now)) {
+            Carbon::setTestNow($now);
+        }
     }
 
     /**
@@ -35,7 +38,7 @@ class FirstFriday
     {
         $firstFriday = new Carbon('first friday of this month', $this->timezone);
 
-        if ($this->today->gt($firstFriday)) {
+        if (Carbon::now()->gt($firstFriday)) {
             return new Carbon('first friday of next month', $this->timezone);
         }
 
@@ -51,7 +54,7 @@ class FirstFriday
     {
         $firstFriday = new Carbon('first friday of this month', $this->timezone);
 
-        if ($this->today->lte($firstFriday)) {
+        if (Carbon::now()->lte($firstFriday)) {
             return new Carbon('first friday of last month', $this->timezone);
         }
 
@@ -59,15 +62,15 @@ class FirstFriday
     }
 
     /**
-     * Override the value to be used for "today" in date calculations.
+     * Override the value to be used for "now" in date calculations.
      *
-     * @param Carbon $today Carbon instance representing the value to be used
-     *                      for "today" in date calculations
+     * @param Carbon $now Carbon instance representing the value to be used
+     *                      for "now" in date calculations
      *
-     * @return PHX2600\FirstFriday
+     * @return FirstFriday
      */
-    public function overrideToday(Carbon $today)
+    public function overrideToday(Carbon $now)
     {
-        return new static($this->timezone, $today);
+        return new static($this->timezone, $now);
     }
 }
