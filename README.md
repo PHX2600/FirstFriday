@@ -10,7 +10,7 @@ FirstFriday.php
 Introduction
 ------------
 
-Calculates the next and previous, first Friday of the month.
+Convinience library for calculating the first Friday of a month.
 
 Like this project? Keep me caffeinated by [making a donation](https://paypal.me/ChrisKankiewicz).
 
