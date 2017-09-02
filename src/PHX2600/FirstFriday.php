@@ -23,10 +23,7 @@ class FirstFriday
     public function __construct($timezone, Carbon $now = null)
     {
         $this->timezone = $timezone;
-
-        if (isset($now)) {
-            Carbon::setTestNow($now);
-        }
+        $this->now = $now ?: Carbon::now($timezone);
     }
 
     /**
@@ -36,10 +33,20 @@ class FirstFriday
      */
     public function next()
     {
-        $firstFriday = new Carbon('first friday of this month', $this->timezone);
+        $firstFriday = new Carbon(sprintf(
+            'first friday of %s %s',
+            $this->now->format('F'),
+            $this->now->format('Y')
+        ), $this->timezone);
 
-        if (Carbon::now()->gt($firstFriday)) {
-            return new Carbon('first friday of next month', $this->timezone);
+        if ($this->now->gt($firstFriday)) {
+            $this->now->addMonth();
+
+            return new Carbon(sprintf(
+                'first friday of %s %s',
+                $this->now->format('F'),
+                $this->now->format('Y')
+            ), $this->timezone);
         }
 
         return $firstFriday;
@@ -52,10 +59,20 @@ class FirstFriday
      */
     public function previous()
     {
-        $firstFriday = new Carbon('first friday of this month', $this->timezone);
+        $firstFriday = new Carbon(sprintf(
+            'first friday of %s %s',
+            $this->now->format('F'),
+            $this->now->format('Y')
+        ), $this->timezone);
 
-        if (Carbon::now()->lte($firstFriday)) {
-            return new Carbon('first friday of last month', $this->timezone);
+        if ($this->now->lte($firstFriday)) {
+            $this->now->subMonth();
+
+            return new Carbon(sprintf(
+                'first friday of %s %s',
+                $this->now->format('F'),
+                $this->now->format('Y')
+            ), $this->timezone);
         }
 
         return $firstFriday;
